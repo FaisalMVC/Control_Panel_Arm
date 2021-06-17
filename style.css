@@ -1,0 +1,12 @@
+div{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+body{
+  background-color: #c6e2ff;
+
+}
+.label{
+  padding-right: 10px;
+}

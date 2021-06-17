@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Controal angle</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form class="" action="http://127.0.0.1/Arm/index.php" method="post">
+
+      <div class="MotorSliders">
+        <label class="label"> Motor1 </label>
+        <input type="range" class="slider" name="Motor1" value="0" min="0" max="180">
+        <label class="limit"></label>
+      </div>
+
+    <div class="MotorSliders">
+      <label class="label"> Motor2 </label>
+      <input type="range" name="Motor2" class="slider" value="0" min="0" max="180">
+      <label class="limit"></label>
+    </div>
+
+    <div class="MotorSliders">
+      <label class="label"> Motor3 </label>
+      <input type="range" name="Motor3" class="slider" value="0" min="0" max="180">
+      <label class="limit"></label>
+    </div>
+
+    <div class="MotorSliders">
+      <label class="label"> Motor4 </label>
+      <input type="range" name="Motor4" class="slider" value="0" min="0" max="180">
+      <label class="limit"></label>
+    </div>
+
+    <div class="MotorSliders">
+      <label class="label"> Motor5 </label>
+      <input type="range" name="Motor5" class="slider" value="0" min="0" max="180">
+      <label class="limit"></label>
+    </div>
+
+    <div class="MotorSliders">
+      <label class="label"> Motor6 </label>
+      <input  type="range" name="Motor6" class="slider" value="0" min="0" max="180">
+      <label class="limit"></label>
+    </div>
+
+    <div class="Buttons">
+      <button type="submit" name="Save" value="Save" >Save</button>
+      <button type="submit" name="Run">Run</button>
+    </div>
+
+  </form>
+
+  </body>
+
+  <script>
+
+  function updateLabel() {
+    var limit = this.parentElement.getElementsByClassName("limit")[0];
+    limit.innerHTML = this.value;
+  }
+
+  var MotorSlider = document.getElementsByClassName("MotorSliders");
+
+  for (var i = 0; i < MotorSlider.length; i++) {
+    var slider = MotorSlider[i].getElementsByClassName("slider")[0];
+    updateLabel.call(slider);
+    slider.oninput = updateLabel;
+  }
+
+
+
+  </script>
+
+</html>
